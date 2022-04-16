@@ -1,0 +1,2 @@
+# HotKeySet
+ConsoleWrite("!Pause" &amp; @LF)     TrayItemSetText($trayPause, "Resume")     Local Static $bPaused = False     $bPaused = Not $bPaused     While 3         Switch TrayGetMsg()             Case $trayPause                 ExitLoop             Case $trayExit                 Exit         EndSwitch     WEnd     TrayItemSetText($trayPause, "Pause")     ConsoleWrite("+Resume" &amp; @LF) EndFunc   ;==>_Pause  Func _Exit()     Exit EndFunc   ;==>_Exit HotKeySet("{Esc}", "_Exit") HotKeySet("{PAUSE}", "_Pause")
